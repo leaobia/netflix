@@ -20,22 +20,22 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 
-    <script src="./js/abertura.js" defer></script>
+    <script src="./js/abertura.js" defer type="module"></script>
+    <script src="./js/app.js" defer type="module"></script>
 
     <title>bibisflix</title>
 </head>
 
 <body>
-    <header>BibisFlix</header>
+    
     <main id="root">
-        <div class="container">
-            <div id="container-login">
-              <card-bibi foto="./img/userUm.PNG"></card-bibi>
-              <card-bibi foto="./img/user2.PNG"></card-bibi>
-              <card-bibi foto="./img/user3.PNG"></card-bibi>
-              <card-bibi foto="./img/user4.PNG"></card-bibi>
-              <card-bibi foto="./img/user5.PNG"></card-bibi>
-            </div>
+        <h1>BibisFlix</h1>
+        <div class="container container-login">
+           <a href="\" onclick="route()"><card-login foto="./img/userUm.PNG"></card-login></a>  
+           <a href="\" onclick="route()"><card-login foto="./img/user2.PNG"></card-login></a>  
+           <a href="\" onclick="route()"><card-login foto="./img/user3.PNG"></card-login></a>  
+           <a href="\" onclick="route()"><card-login foto="./img/user4.PNG"></card-login></a>  
+           <a href="\" onclick="route()"><card-login foto="./img/user5.PNG"></card-login></a>  
         </div>
     </main>
     

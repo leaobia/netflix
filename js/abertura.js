@@ -79,4 +79,4 @@
 }
 
 // isso cria a propia tag chamada card-bibi
-customElements.define('card-bibi', cards)
+customElements.define('card-login', cards)

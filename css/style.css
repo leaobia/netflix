@@ -1,11 +1,9 @@
 body{
-    height: 100vh;
+   
     background-color: var(--secundary-color);
-    display: grid;
-    grid-template-rows: 400px 1fr;
 }
 
-header{
+h1{
     color: var(--primary-color);
     font-size: clamp(7rem, -2rem + 24vw, 10rem);
     font-family: 'Bebas Neue', cursive;
@@ -17,13 +15,15 @@ header{
 
 main{
     width: 100%;
+    display: grid;
+    grid-template-rows: 400px 1fr;
 }
 
 .container{
     width: 100%;
 }
 
-#container-login{
+.container-login{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-row-gap: 30px;
@@ -33,5 +33,8 @@ main{
     padding-bottom: 30px;
 }
 
+p{
+    color: aliceblue;
+}
 
 
