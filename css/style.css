@@ -23,7 +23,7 @@ main{
     width: 100%;
 }
 
-.container-login{
+#container-login{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-row-gap: 30px;
@@ -34,15 +34,4 @@ main{
 }
 
 
-.user{
-    width: 200px;
-    height: 200px;
-    transition: .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 
-.user:hover{
- transform: scale(1.2);
-}
