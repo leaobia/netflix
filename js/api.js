@@ -3,10 +3,14 @@
 
 
 const testando =  () => {
-    const batman = 'Batman'
-    fetch(`https://www.omdbapi.com/?apikey=d2feea&t=${batman}`)
-    .then(result => result.json())
-    .then(json => console.log(json))
-}
+
+    const batman = ['Barbie', 'Batman', 'Vingadores']
+    batman.forEach((item) =>{
+        fetch(`https://www.omdbapi.com/?apikey=d2feea&t=${item}`)
+        .then(result => result.json())
+        .then(json => console.log(json))
+    }
+   
+)}
 
 testando()
