@@ -1,40 +1,92 @@
-body{
-   
-    background-color: var(--secundary-color);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-h1{
+:root{
+    --primary-color: #db0000;
+    --secundary-color: #000000;
+    --white-color: #ffffff;
+    --gray-color: #564d4d;
+    --dark-primary-color: #831010;
+}
+
+a{text-decoration: none; color: #ffff; transition: .3s ease-in-out;}
+ul,li,ol{list-style: none;}
+
+
+body{
+    height: 100vh;
+    background-color:  var(--secundary-color);
+    display: grid;
+    grid-template-rows: 60px 1fr;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    font-size: clamp(2rem, -2rem + 11vw, 3rem);
     color: var(--primary-color);
-    font-size: clamp(7rem, -2rem + 24vw, 10rem);
     font-family: 'Bebas Neue', cursive;
+}
+
+
+.menu-container{
+    height: 100%;
+    font-size: clamp(0.7rem, -0.5rem + 3.2vw, 1.3rem);
+    gap: 3%;
+    text-transform: uppercase;
+}
+
+.teste{
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-
-main{
-    width: 100%;
-    display: grid;
-    grid-template-rows: 400px 1fr;
+.teste2{
+    width: 90%;
+    height: 80%;
+    background-image: url(../img/netflix-library-1280x720.jpg);
+    opacity: .4;
+    border-radius: 15px;
 }
 
 .container{
     width: 100%;
+    height: 100%;
+    color: #D8E2EC;
+    background-color: #112233;
 }
 
-.container-login{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-row-gap: 30px;
-    place-items: center;
-    width: 100%;
-    cursor: pointer;
-    padding-bottom: 30px;
+.container-home{
+    background-color: #B63165;
 }
 
-p{
-    color: aliceblue;
+.container-vermelho{
+    background-color: #C0392B;
 }
 
+.container-azul{
+    background-color: #5991B1;
+}
+
+.container-roxo{
+    background-color: #785EDD;
+}
+
+.container-laranja{
+    background-color: #EB6B56;
+}
 
