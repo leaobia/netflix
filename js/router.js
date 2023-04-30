@@ -2,10 +2,7 @@
 
 const routes = {
     '/' : '/pages/home.html',
-    '/vermelho' : '/pages/vermelho.html',
-    '/azul' : '/pages/azul.html',
-    '/roxo' : '/pages/roxo.html',
-    '/laranja' : '/pages/laranja.html'
+    '/vermelho' : '/pages/vermelho.html'
 }
 
 const route = async ()  => {
@@ -17,10 +14,6 @@ const route = async ()  => {
     const root = document.getElementById('root').innerHTML = html
 
 }
-
-
-
-
 
 
 window.route = route

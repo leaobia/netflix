@@ -101,28 +101,40 @@ nav{
 .container{
     width: 100%;
     height: 100%;
-    color: #D8E2EC;
-    background-color: #112233;
+    background-color: #831010;
 }
 
-.container-home{
-    background-color: #B63165;
+span{
+    color: #ffffff;
+    font-family: 'Open Sans', cursive;
+}
+
+.card-container{
+    display: flex; 
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
 }
 
 .container-vermelho{
-    background-color: #C0392B;
+    display: flex;
+    flex-direction: column;
 }
 
-.container-azul{
-    background-color: #5991B1;
+.container-catalogo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.container-roxo{
-    background-color: #785EDD;
+.item{
+    width: 200px;
+    height: 300px;
 }
 
-.container-laranja{
-    background-color: #EB6B56;
+.item img{
+    width: 100%;
+    height: 100%;
 }
 
 
