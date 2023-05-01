@@ -164,10 +164,13 @@ span{
 }
 
 .dados{
-    content: '';
-    background-color: #564d4d;
     height: 100%;
     width: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
 }
 
 form{
@@ -194,6 +197,20 @@ form button{
     padding-left: 10px;
 }
 
+.containerimg{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.containerdados{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
 @media (max-width:500px) {
     .teste3 h1{
         width: 90%;
@@ -202,4 +219,19 @@ form button{
     .card-container{
         justify-content: center;
     }
+
+    .dados{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .containerdados{
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .container-azul{
+        padding: 8%;
+    }
+    
 }
