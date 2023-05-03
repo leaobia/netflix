@@ -73,15 +73,6 @@ span{
         justify-content: center;
     }
 
-    .dados{
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .containerdados{
-        max-width: 90%;
-        text-align: center;
-    }
 
     .container-azul{
         padding: 8%;

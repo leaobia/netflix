@@ -1,6 +1,8 @@
 'use strict'
 
-console.log('js carregado');
+
+// Função que exporta o ato de clicar no botão, dar o blur ou clicar na tecla Enter
+
 
 export const btn = () => {
 
@@ -25,42 +27,129 @@ export const btn = () => {
 }
 
 
-const criaConteudoSearchHTML = (json) => {
-  const containerDados = document.getElementById('dados')
-  containerDados.innerHTML = ''
+// Criando web component chamado movie-search-result
 
-  if (json.Response == 'False') {
-    const p = document.createElement('p')
-    p.textContent = "Filme não encontrado! \n Verifique se digitou corretamente."
 
-    containerDados.append(p)
-  } else {
-    const div = document.createElement('div')
-    div.classList.add('containerimg')
+class MovieSearchResult extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
 
-    const h1 = document.createElement('h1')
-    h1.textContent = json.Title
+  attributeChangedCallback(nameAttr, oldValue, newValue) {
+    this[nameAttr] = newValue
+  }
 
-    const img = document.createElement('img')
-    img.src = json.Poster
+  connectedCallback() {
+    this.shadowRoot.appendChild(this.component());
+    this.shadowRoot.appendChild(this.styles());
+  }
 
-    const p = document.createElement('p')
-    p.textContent = json.Plot
+  styles() {
+    const css = document.createElement('style')
+    css.textContent = `
+    
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
 
-    const divDados = document.createElement('div')
-    divDados.classList.add('containerdados')
+    .d-flex{
+      height: 100%;
+      width: 100%;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4%;
+    }
+    
+    .containerimg{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  
+  .containerdados{
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+    
+  @media (max-width:500px) {
 
-    const actors = document.createElement('p')
-    actors.textContent = 'Actors: ' + json.Actors
 
-    const director = document.createElement('p')
-    director.textContent = 'Director: ' + json.Director
+    .d-flex{
+        flex-direction: column;
+        gap: 30px;
+    }
 
-    containerDados.append(div, divDados)
-    div.append(h1, img)
-    divDados.append(p, actors, director)
+    .containerdados{
+        max-width: 90%;
+        text-align: center;
+    }
+    
+}
+
+    `
+
+    return css;
+}
+
+  component(){
+    const container = document.createElement('div');
+    container.classList.add('d-flex')
+
+    if (this.jsonData && this.jsonData.Response == 'False') {
+      const p = document.createElement('p');
+      p.textContent = "Filme não encontrado! \n Verifique se digitou corretamente.";
+
+      container.append(p);
+    } else if (this.jsonData) {
+      const div = document.createElement('div');
+      div.classList.add('containerimg');
+
+      const h1 = document.createElement('h1');
+      h1.textContent = this.jsonData.Title;
+
+      const img = document.createElement('img');
+      img.src = this.jsonData.Poster;
+
+      const p = document.createElement('p');
+      p.textContent = this.jsonData.Plot;
+
+      const divDados = document.createElement('div');
+      divDados.classList.add('containerdados');
+
+      const actors = document.createElement('p');
+      actors.textContent = 'Actors: ' + this.jsonData.Actors;
+
+      const director = document.createElement('p');
+      director.textContent = 'Director: ' + this.jsonData.Director;
+
+      container.append(div, divDados);
+      div.append(h1, img);
+      divDados.append(p, actors, director);
+    }
+
+    return container;
+  }
+
+  set movieData(json) {
+    this.jsonData = json;
+    this.shadowRoot.innerHTML = '';
+    this.shadowRoot.appendChild(this.component());
+    this.shadowRoot.appendChild(this.styles());
   }
 }
+
+customElements.define('movie-search-result', MovieSearchResult);
+
+
+
+// Função que faz o fetch da API e em seguida ativa o resultado do filme
 
 const criaDados = () => {
   const inputFilme = document.querySelector('#inputFilme')
@@ -68,8 +157,8 @@ const criaDados = () => {
   fetch(`https://www.omdbapi.com/?apikey=d2feea&t=${name}`)
     .then(result => result.json())
     .then(json => {
-      console.log(json);
-      criaConteudoSearchHTML(json);
+      const movieResult = document.querySelector('movie-search-result');
+      movieResult.movieData = json;
     })
 }
 
