@@ -23,10 +23,12 @@ form{
 }
 
 form button{
-    width: 20%;
+    width: auto;
     display: grid;
+    padding: 0PX 40PX 0PX 40PX;
     place-self: center;
     cursor: pointer;
+    font-size: clamp(1rem, 0rem + 3.2vw, 1.2rem);
 }
 
 #inputFilme{

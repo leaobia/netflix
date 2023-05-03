@@ -4,7 +4,7 @@ import {btn} from'./search.js'
 import {fetchAPI} from'./api.js'
 
 const routes = {
-    '/' : 'pages/home.html',
+    '/' : 'index.html',
     '/catalogo' : 'pages/catalogo.html',
     '/search' : 'pages/search.html'
 

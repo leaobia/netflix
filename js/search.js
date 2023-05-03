@@ -77,6 +77,10 @@ class MovieSearchResult extends HTMLElement {
       flex-direction: column;
       gap: 10px;
   }
+
+  p{
+    font-size: clamp(1rem, 0rem + 3.2vw, 1.8rem);
+  }
     
   @media (max-width:500px) {
 
@@ -94,7 +98,6 @@ class MovieSearchResult extends HTMLElement {
 }
 
     `
-
     return css;
 }
 
@@ -136,6 +139,8 @@ class MovieSearchResult extends HTMLElement {
 
     return container;
   }
+
+  // função que define o comportamento do movie-search-result de acordo com os dados do json
 
   set movieData(json) {
     this.jsonData = json;

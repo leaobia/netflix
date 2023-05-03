@@ -35,7 +35,7 @@ export const fetchAPI = () => {
     .then(response => response.json())
     .then(data => {
 
-      const titles = data.map(movie => movie.title).slice(0, 20).sort(() => Math.random() - 0.5);
+      const titles = data.map(movie => movie.title).slice(0, 20).sort(() => Math.random() );
 
       titles.forEach((item) => {
         fetch(`https://www.omdbapi.com/?apikey=d2feea&t=${item}`)
