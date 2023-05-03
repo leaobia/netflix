@@ -7,10 +7,21 @@ export const btn = () => {
 
   const inputFilme = document.querySelector('#inputFilme')
   const button = document.getElementById('button')
+
+
   button.addEventListener('click', () => {
-    console.log(inputFilme.value)
     criaDados()
   })
+
+  inputFilme.addEventListener('blur', function (e) {
+    criaDados(e)
+  });
+
+  inputFilme.addEventListener('keydown', function (e) {
+    if (e.key == "Enter") {
+      this.blur()
+    }
+  });
 
 }
 
