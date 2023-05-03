@@ -1,0 +1,51 @@
+.container-azul{
+    display: flex;
+    flex-direction: column;
+}
+
+.dados{
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
+}
+
+form{
+    
+    display: grid;
+    width: 100%;
+    place-content: center;
+    padding-top: 2%;
+    grid-row-gap: 10px;
+}
+
+form button{
+    width: 20%;
+    display: grid;
+    place-self: center;
+    cursor: pointer;
+}
+
+#inputFilme{
+    width: 80vw;
+    height: 4vh;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding-left: 10px;
+}
+
+.containerimg{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.containerdados{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

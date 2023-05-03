@@ -49,54 +49,6 @@ nav{
     font-family: 'Open Sans', cursive;
 }
 
-.teste{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.teste2{
-    width: 90%;
-    height: 80%;
-    background-image: url(../img/netflix-library-1280x720.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 15px;
-    z-index: 0;
-}
-.teste2::before {
-    content: "";
-    position: absolute;
-    width: 90%;
-    height: 80%;
-    background-color: rgba(0, 0, 0, 0.7); 
-    border-radius: 15px;
-    z-index: -1;
-}
-
-.teste3{
-    width: 100%;
-    height: 100%;
-    color: #ffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 4%;
-    font-family: 'Open Sans', cursive;
-    gap: 2vh;
-}
-
-.teste3 h1{
-    font-size: clamp(2rem, -0.5rem + 8vw, 4rem);
-    width: 60%;
-}
-
-.teste3 h2{
-    font-size: clamp(1rem, 0.375rem + 2vw, 1.5rem);
-}
 
 .container{
     width: 100%;
@@ -110,109 +62,10 @@ span{
     font-size: 2rem;
 }
 
-.card-container{
-    display: flex; 
-    flex-wrap: wrap;
-    max-width: 100vw;
-    gap: 20px;
-    padding-top: 2%;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.container-vermelho{
-    display: flex;
-    flex-direction: column;
-}
-
-.container-catalogo{
-    display: flex;
-    flex-direction: column;
-    padding-left: 3%;
-    padding-top: 1%;
-    gap: 10px;
-    width: 100%;
-}
-
-.item{
-    width: 400px;
-    height: 300px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    margin: 2%;
-  }
-  
-
-.item img{
-    width: 70%;
-    height: 90%;
-}
-
-.item span{
-    font-size: .9rem;
-    font-weight: 600;
-}
-
-.container-azul{
-    display: flex;
-    flex-direction: column;
-}
-
-.dados{
-    height: 100%;
-    width: 100%;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4%;
-}
-
-form{
-    
-    display: grid;
-    width: 100%;
-    place-content: center;
-    padding-top: 2%;
-    grid-row-gap: 10px;
-}
-
-form button{
-    width: 20%;
-    display: grid;
-    place-self: center;
-    cursor: pointer;
-}
-
-#inputFilme{
-    width: 80vw;
-    height: 4vh;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    padding-left: 10px;
-}
-
-.containerimg{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.containerdados{
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
 
 @media (max-width:500px) {
-    .teste3 h1{
+    .container_dados_escrita h1{
         width: 90%;
     }
 

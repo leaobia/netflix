@@ -1,11 +1,12 @@
 'use strict'
 
 import {btn} from'./search.js'
+import {fetchAPI} from'./api.js'
 
 const routes = {
     '/' : 'pages/home.html',
-    '/vermelho' : 'pages/vermelho.html',
-    '/azul' : 'pages/azul.html'
+    '/catalogo' : 'pages/catalogo.html',
+    '/search' : 'pages/search.html'
 
 }
 
@@ -21,11 +22,12 @@ const route = async ()  => {
     
     const root = document.getElementById('root').innerHTML = html
 
-    if(window.location.pathname == '/azul'){
+    if(window.location.pathname == '/search'){
         btn()
+      }else if(window.location.pathname == '/catalogo'){
+        fetchAPI()
       }
     
-
 }
 
 

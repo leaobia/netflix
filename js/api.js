@@ -1,21 +1,10 @@
 'use strict'
 
-/********************************************************
- * Autora: Bianca Leão
- * Objetivo: Dar o fetch da API
- * O que aprendi: DOMContentLoad, .sort(() => Math.random() - 0.5);
- */
-
 
 import './router.js'
 
+ export const fetchAPI = () => {
 
-document.addEventListener('DOMContentLoaded', () => {
-  const link = document.querySelector('#linkCatalogo');
-
-
-  const fetchAPI = () => {
-    link.addEventListener('click', () => {
       fetch('https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json')
         .then(response => response.json())
         .then(data => {
@@ -46,21 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
               });
           });
         });
-    });
-  }
 
-  fetchAPI();
-});
+   }
 
 
 
-
-
-
-
-
-     // a.onclick = function() {
-                 //   route('/pages/azul.html');
-                 // };  
-                //  console.log(a.href);
-                //  a.onclick= route()
